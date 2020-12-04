@@ -19,10 +19,7 @@ class Wines
       DESC
     ");
     $sql->setFetchMode(\PDO::FETCH_ASSOC);
-    var_dump($sql);
-    return $sql;
+    $data = $sql->fetchAll(PDO::FETCH_ASSOC);
+    return $data;
   }
 }
-
-$test = new Wines;
-var_dump($test->list());
